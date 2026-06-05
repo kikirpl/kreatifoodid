@@ -1,0 +1,234 @@
+{
+        "company": "Farmio",
+        "hiring": [
+                {
+                        "id": 1,
+                        "title": "Credit Analyst",
+                        "role_purpose": "Menjadi gatekeeper kualitas pembiayaan Farmio dengan memastikan setiap kredit yang disalurkan memiliki risk profile yang sehat dan scalable.",
+                        "responsibilities": [
+                                "Analisa kelayakan kredit berbasis cash flow, karakter, dan data lapangan",
+                                "Melakukan risk scoring & membuat credit memo",
+                                "Berkolaborasi dengan tim lapangan (field/business) untuk validasi data",
+                                "Monitoring portfolio & early warning signal (NPL prevention)",
+                                "Membantu merancang credit policy & SOP"
+                        ],
+                        "success_metrics": [
+                                "NPL ratio terjaga sesuai target",
+                                "Approval turnaround time cepat & akurat",
+                                "Portfolio growth dengan risk terkendali"
+                        ],
+                        "requirements": [
+                                "Min. S1 Finance/Akuntansi/Ekonomi",
+                                "Pengalaman di bank/fintech/lending (2–5 tahun)",
+                                "Strong analytical & risk assessment skill",
+                                "Familiar dengan sektor UMKM/agri jadi nilai tambah"
+                        ],
+                        "plus_points": [
+                                "Pernah handle productive loan / supply chain financing",
+                                "Mengerti alternative data (non-traditional scoring)"
+                        ]
+                },
+                {
+                        "id": 2,
+                        "title": "Finance",
+                        "role_purpose": "Mengelola kesehatan finansial perusahaan dan memastikan runway serta efisiensi biaya terjaga.",
+                        "responsibilities": [
+                                "Cash flow planning & liquidity management",
+                                "Budgeting & forecasting (monthly & quarterly)",
+                                "Financial performance analysis",
+                                "Cost efficiency & margin improvement",
+                                "Support strategic decision (expansion, pricing, dll)"
+                        ],
+                        "success_metrics": [
+                                "Cash runway optimal",
+                                "Variance budget vs actual terkendali",
+                                "Cost efficiency meningkat"
+                        ],
+                        "requirements": [
+                                "Min. S1 Finance/Akuntansi",
+                                "Pengalaman 3–6 tahun",
+                                "Strong Excel / financial modeling",
+                                "Strategic thinking + detail oriented"
+                        ]
+                },
+                {
+                        "id": 3,
+                        "title": "Accounting & Tax",
+                        "role_purpose": "Menjaga integritas laporan keuangan & kepatuhan pajak perusahaan.",
+                        "responsibilities": [
+                                "Penyusunan laporan keuangan (bulanan & tahunan)",
+                                "Filing pajak (PPN, PPh 21/23/25/29)",
+                                "Rekonsiliasi & closing",
+                                "Support audit (internal & external)",
+                                "Monitoring compliance regulasi"
+                        ],
+                        "success_metrics": [
+                                "Laporan tepat waktu & akurat",
+                                "Tidak ada penalty pajak",
+                                "Audit berjalan smooth"
+                        ],
+                        "requirements": [
+                                "Min. 3 tahun pengalaman",
+                                "Brevet A/B wajib (C preferred)",
+                                "Paham PSAK"
+                        ]
+                },
+                {
+                        "id": 4,
+                        "title": "Inventory Controller",
+                        "role_purpose": "Menjamin akurasi dan efisiensi pengelolaan stok di seluruh supply chain.",
+                        "responsibilities": [
+                                "Kontrol pergerakan barang (inbound/outbound)",
+                                "Stock opname & cycle count",
+                                "Analisa shrinkage/loss",
+                                "Reporting inventory aging & turnover",
+                                "Koordinasi dengan warehouse & procurement"
+                        ],
+                        "success_metrics": [
+                                "Selisih stok minimal",
+                                "Inventory turnover optimal",
+                                "Loss/shrinkage rendah"
+                        ]
+                },
+                {
+                        "id": 5,
+                        "title": "Warehouse Admin",
+                        "role_purpose": "Memastikan operasional gudang berjalan rapi, cepat, dan terdokumentasi.",
+                        "responsibilities": [
+                                "Input & update data stok",
+                                "Dokumen pengiriman & penerimaan",
+                                "Koordinasi logistik",
+                                "Reporting harian"
+                        ],
+                        "success_metrics": [
+                                "Akurasi data tinggi",
+                                "Proses administrasi cepat & rapi"
+                        ]
+                },
+                {
+                        "id": 6,
+                        "title": "Head of Growth",
+                        "role_purpose": "Meng-drive pertumbuhan Farmio secara agresif dan terukur (revenue, user, dan market expansion).",
+                        "responsibilities": [
+                                "Menyusun & eksekusi growth strategy (acquisition, activation, retention)",
+                                "Mengelola funnel end-to-end",
+                                "Lead marketing & sales team",
+                                "Data-driven experimentation (A/B testing)",
+                                "Partnership & expansion strategy"
+                        ],
+                        "success_metrics": [
+                                "Revenue growth rate",
+                                "CAC vs LTV ratio sehat",
+                                "Conversion rate meningkat"
+                        ],
+                        "requirements": [
+                                "Pengalaman di startup/growth (5–10 tahun)",
+                                "Strong analytical & leadership",
+                                "Hands-on & execution driven"
+                        ]
+                },
+                {
+                        "id": 7,
+                        "title": "Digital Marketing",
+                        "role_purpose": "Menciptakan demand & awareness melalui digital channel.",
+                        "responsibilities": [
+                                "Performance ads (Meta, Google, TikTok)",
+                                "Content strategy & campaign",
+                                "Lead generation & funnel optimization",
+                                "Analytics & reporting"
+                        ],
+                        "success_metrics": [
+                                "Cost per lead (CPL) efisien",
+                                "Conversion meningkat",
+                                "Traffic & engagement naik"
+                        ]
+                },
+                {
+                        "id": 8,
+                        "title": "Customer Service",
+                        "role_purpose": "Membangun pengalaman customer yang excellent & terpercaya.",
+                        "responsibilities": [
+                                "Handle inquiry & complaint",
+                                "Edukasi produk",
+                                "Maintain customer satisfaction",
+                                "Escalation handling"
+                        ],
+                        "success_metrics": [
+                                "CSAT tinggi",
+                                "Response time cepat",
+                                "Complaint resolution rate tinggi"
+                        ]
+                },
+                {
+                        "id": 9,
+                        "title": "Live Chat Support",
+                        "role_purpose": "Menjadi frontline real-time support untuk conversion & retention.",
+                        "responsibilities": [
+                                "Fast response chat",
+                                "Follow up leads",
+                                "Support sales funnel"
+                        ],
+                        "success_metrics": [
+                                "Response time cepat",
+                                "Conversion dari chat tinggi"
+                        ]
+                },
+                {
+                        "id": 10,
+                        "title": "Collection",
+                        "role_purpose": "Menjaga kualitas pembayaran & kesehatan portfolio.",
+                        "responsibilities": [
+                                "Follow up pembayaran",
+                                "Negosiasi repayment plan",
+                                "Monitoring overdue",
+                                "Field visit (jika diperlukan)"
+                        ],
+                        "success_metrics": [
+                                "Collection rate tinggi",
+                                "Overdue menurun"
+                        ]
+                },
+                {
+                        "id": 11,
+                        "title": "IT",
+                        "role_purpose": "Membangun sistem yang scalable & reliable untuk operasional Farmio.",
+                        "responsibilities": [
+                                "Develop & maintain platform",
+                                "Integrasi sistem",
+                                "Troubleshooting",
+                                "Data & system security"
+                        ],
+                        "success_metrics": [
+                                "System uptime tinggi",
+                                "Bug minim",
+                                "Delivery feature cepat"
+                        ]
+                },
+                {
+                        "id": 12,
+                        "title": "Program Manager",
+                        "role_purpose": "Mengelola program bisnis (petani/peternak) agar berjalan efektif & scalable.",
+                        "responsibilities": [
+                                "Planning & execution program",
+                                "Stakeholder management",
+                                "Monitoring KPI & impact",
+                                "Reporting"
+                        ],
+                        "success_metrics": [
+                                "Program ROI",
+                                "KPI tercapai",
+                                "Execution tepat waktu"
+                        ]
+                },
+                {
+                        "id": 13,
+                        "title": "Admin Staff",
+                        "role_purpose": "Menjadi support system agar operasional berjalan lancar.",
+                        "responsibilities": [
+                                "Administrasi umum",
+                                "Data entry",
+                                "Support tim"
+                        ]
+                }
+        ]
+}
