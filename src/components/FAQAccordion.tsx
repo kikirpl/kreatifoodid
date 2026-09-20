@@ -1,144 +1,169 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
+import Icon from "./Icons";
 
-const faqs = [
+const faqs: { question: string; answer: ReactNode }[] = [
   {
-    question: "PT Kreatif Food Indonesia menjual produk apa saja?",
+    question: "Produk apa saja yang tersedia di PT Kreatif Food Indonesia?",
     answer: (
       <>
-        <p>Kami fokus menyediakan kebutuhan ayam untuk usaha kuliner dan distribusi, yaitu:</p>
-        <ul className="list-disc pl-5 mt-2 space-y-1">
-          <li>Ayam frozen (karkas & potongan beku)</li>
-          <li>Ayam fresh (potong hari)</li>
-          <li>Karkas utuh siap olah</li>
-          <li>Potongan premium: dada, paha, sayap, fillet</li>
+        <p>
+          Ada delapan produk ayam beku yang dikelompokkan ke dalam tiga kategori:
+        </p>
+        <ul className="mt-3 list-disc space-y-1 pl-5">
+          <li>Produk utama: karkas ayam, boneless dada tanpa kulit, boneless paha tanpa kulit</li>
+          <li>Sampingan bernilai tinggi: sayap ayam, kulit ayam, hati ayam</li>
+          <li>Sampingan industri: kerongkongan dan tulang paha (TLP)</li>
         </ul>
-      </>
-    ),
-  },
-  {
-    question: "Apakah PT Kreatif Food melayani pembelian dalam jumlah besar?",
-    answer: (
-      <>
-        <p>Ya, kami fokus melayani kebutuhan skala usaha dan distribusi B2B.</p>
-        <p className="mt-2">Cocok untuk:</p>
-        <ul className="list-disc pl-5 mt-2 space-y-1">
-          <li>Restoran & rumah makan</li>
-          <li>Katering & cloud kitchen</li>
-          <li>Warung makan & warteg</li>
-          <li>Distributor & pedagang pasar</li>
-          <li>Hotel & food service</li>
-        </ul>
-      </>
-    ),
-  },
-  {
-    question: "Bagaimana sistem cold chain PT Kreatif Food Indonesia?",
-    answer: (
-      <>
-        <p>Kami menjaga kualitas produk melalui rantai dingin yang tidak terputus dari processing plant hingga ke tangan Anda.</p>
-        <ul className="list-disc pl-5 mt-2 space-y-1">
-          <li>Armada pengiriman berpendingin</li>
-          <li>Suhu terkontrol sepanjang distribusi</li>
-          <li>Produk higienis dan segar tiba di tujuan</li>
-          <li>Standar kebersihan ketat setiap batch</li>
-        </ul>
-      </>
-    ),
-  },
-  {
-    question: "Apakah produk PT Kreatif Food sudah bersertifikat Halal?",
-    answer: (
-      <>
-        <p>Ya, seluruh produk ayam kami memenuhi standar halal dan NKV (Nomor Kontrol Veteriner) yang ditetapkan pemerintah.</p>
-        <ul className="list-disc pl-5 mt-2 space-y-1">
-          <li>Bersertifikat halal resmi</li>
-          <li>Proses penyembelihan sesuai syariat</li>
-          <li>Pengawasan mutu ketat setiap proses</li>
-        </ul>
-      </>
-    ),
-  },
-  {
-    question: "Bagaimana sistem pembayaran di PT Kreatif Food Indonesia?",
-    answer:
-      "Pembayaran dapat dilakukan melalui transfer bank, virtual account, maupun sistem pembayaran sesuai kesepakatan kerja sama jangka panjang.",
-  },
-  {
-    question: "Apakah PT Kreatif Food menerima kerja sama bisnis jangka panjang?",
-    answer: (
-      <>
-        <p>Tentu. Kami membuka kerja sama untuk kebutuhan supply ayam rutin dan distribusi jangka panjang.</p>
-        <p className="mt-2">
-          Tim kami siap menjadi partner pasokan ayam terpercaya — stok stabil, jadwal pengiriman konsisten, dan kualitas terjaga setiap batch untuk bisnis kuliner Anda.
+        <p className="mt-3">
+          Karkas tersedia dalam 14 varian bobot, mulai 0,4 kg sampai 1,7 kg.
         </p>
       </>
+    ),
+  },
+  {
+    question: "Siapa saja yang dilayani?",
+    answer: (
+      <>
+        <p>Pasokan kami disiapkan untuk empat segmen:</p>
+        <ul className="mt-3 list-disc space-y-1 pl-5">
+          <li>HORECA — hotel, restoran, rumah makan, dan katering</li>
+          <li>Ritel modern dan toko frozen food</li>
+          <li>Industri pengolahan pangan — nugget, sosis, kaldu, ekstrak rasa, pet food</li>
+          <li>Pasar ekspor serta kebutuhan rumah tangga melalui jaringan dagang</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    question: "Bagaimana rantai dingin dijaga sampai ke lokasi mitra?",
+    answer: (
+      <>
+        <p>
+          Produk melewati lima tahap yang seluruhnya terkendali suhunya: seleksi bahan baku,
+          pemotongan dan pemorsian, pembekuan cepat, penyimpanan cold storage, lalu distribusi
+          dengan armada berpendingin.
+        </p>
+        <p className="mt-3">Suhu simpan ideal dijaga di sekitar −18°C sepanjang proses.</p>
+      </>
+    ),
+  },
+  {
+    question: "Apakah produknya higienis dan halal?",
+    answer: (
+      <p>
+        Ya. Standar higienitas dan prinsip kehalalan diterapkan di setiap tahap pengolahan,
+        dan produk diproses serta disimpan pada suhu terkendali untuk menekan risiko
+        kontaminasi. Dokumen pendukung mutu dapat kami kirimkan atas permintaan mitra.
+      </p>
+    ),
+  },
+  {
+    question: "Apa yang dimaksud zero waste processing?",
+    answer: (
+      <p>
+        Hampir 100% bagian ayam dimanfaatkan. Selain produk utama, bagian seperti kulit, hati,
+        kerongkongan, dan tulang paha diolah menjadi produk bernilai tambah untuk makanan
+        olahan, kaldu, industri ekstrak rasa, serta pet food — sehingga limbah ditekan dan nilai
+        per ekor naik.
+      </p>
+    ),
+  },
+  {
+    question: "Apa beda merek AYAMKITA, Prime Chicken, dan KFI Poultry Premium?",
+    answer: (
+      <>
+        <p>Ketiganya melayani segmen yang berbeda:</p>
+        <ul className="mt-3 list-disc space-y-1 pl-5">
+          <li>AYAMKITA® — merek utama untuk pasar tradisional dan modern</li>
+          <li>Prime Chicken® — lini premium</li>
+          <li>KFI Poultry Premium® — khusus HORECA dan industri</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    question: "Bagaimana cara memulai kerja sama?",
+    answer: (
+      <p>
+        Hubungi tim kami melalui WhatsApp atau email dengan menyebutkan jenis produk, perkiraan
+        volume, frekuensi pengiriman, dan lokasi. Kami akan menyiapkan penawaran, jadwal
+        pasokan, serta skema pembayaran sesuai kesepakatan kerja sama.
+      </p>
     ),
   },
 ];
 
 export default function FAQAccordion() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="mx-auto w-full max-w-4xl px-5 pb-20 sm:px-8 lg:px-10">
-      <div className="section-heading mx-auto mb-12 flex w-full flex-col items-center justify-center text-center">
-        <p className="section-kicker">FAQ</p>
-        <h2 className="section-title w-full text-center">
-          Pertanyaan yang sering diajukan.
-        </h2>
-      </div>
+    <section id="faq" className="band band-mist">
+      <div className="shell mx-auto max-w-4xl">
+        <p className="eyebrow">
+          <span className="eyebrow-num">13</span>
+          <span className="eyebrow-rule" />
+          FAQ
+        </p>
+        <h2 className="section-title">Pertanyaan yang sering diajukan</h2>
 
-      <div className="flex flex-col gap-4">
-        {faqs.map((faq, index) => {
-          const isOpen = openIndex === index;
-          return (
-            <div
-              key={index}
-              className={`overflow-hidden rounded-[2rem] border border-[var(--color-leaf)]/10 p-6 md:p-8 shadow-[0_24px_60px_rgba(26,124,52,0.08)] backdrop-blur transition-all duration-300 ${
-                isOpen ? "bg-white/90 shadow-lg" : "bg-white/60 hover:-translate-y-1 hover:bg-white/80 hover:shadow-xl"
-              }`}
-            >
-              <button
-                onClick={() => setOpenIndex(isOpen ? null : index)}
-                className="flex w-full items-center justify-between gap-4 text-left focus:outline-none"
-              >
-                <h3 className={`text-xl font-semibold tracking-[-0.03em] text-[var(--color-ink)] transition-colors ${isOpen ? "text-[var(--color-leaf)]" : ""}`}>
-                  {faq.question}
+        <div className="mt-10 flex flex-col gap-3">
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index;
+            return (
+              <div key={faq.question} className="faq-item" data-open={isOpen}>
+                <h3>
+                  <button
+                    type="button"
+                    onClick={() => setOpenIndex(isOpen ? null : index)}
+                    className="faq-question"
+                    aria-expanded={isOpen}
+                    aria-controls={`faq-panel-${index}`}
+                  >
+                    {faq.question}
+                    <span className="faq-toggle" aria-hidden="true">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={2.4}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="m19 9-7 7-7-7" />
+                      </svg>
+                    </span>
+                  </button>
                 </h3>
-                <span
-                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${
-                    isOpen ? "rotate-180 bg-[var(--color-leaf)] text-white shadow-md" : "bg-[var(--color-leaf)]/10 text-[var(--color-leaf)]"
+                <div
+                  id={`faq-panel-${index}`}
+                  className={`grid transition-[grid-template-rows] duration-300 ease-out ${
+                    isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
                   }`}
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2.5}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </span>
-              </button>
-              <div
-                className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
-                  isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-                }`}
-              >
-                <div className="overflow-hidden">
-                  <div className="mt-4 pr-12 text-base leading-7 text-[var(--color-ink-soft)]">
-                    {faq.answer}
+                  <div className="overflow-hidden">
+                    <div className="faq-answer">{faq.answer}</div>
                   </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
+
+        <div className="mt-8 flex flex-wrap items-center gap-4 rounded-[1.25rem] border border-[var(--kfi-line)] bg-white p-6">
+          <span className="icon-badge icon-badge-sm">
+            <Icon name="handshake" />
+          </span>
+          <p className="text-sm text-[var(--kfi-ink-soft)]">
+            Pertanyaan Anda belum terjawab?
+          </p>
+          <a href="#kontak" className="btn btn-solid ml-auto px-5 py-2.5 text-sm">
+            Hubungi tim kami
+          </a>
+        </div>
       </div>
     </section>
   );

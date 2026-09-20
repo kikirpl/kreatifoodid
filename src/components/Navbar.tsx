@@ -1,175 +1,153 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import Icon from "./Icons";
+import { company, navLinks } from "@/lib/company";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [lang, setLang] = useState<"id" | "en">("id");
 
-  // Prevent scrolling when menu is open
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
+    document.body.style.overflow = isOpen ? "hidden" : "unset";
+    return () => {
       document.body.style.overflow = "unset";
-    }
+    };
   }, [isOpen]);
 
   return (
-    <div className="sticky top-4 z-50 mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10 fade-up">
-      <header className="flex items-center justify-between gap-4 rounded-[2rem] border border-white/60 bg-white/70 px-4 py-3 shadow-[0_18px_60px_rgba(26,124,52,0.08)] backdrop-blur md:px-6 transition-all">
-        <div className="flex-shrink-0">
+    <div className="sticky top-4 z-50 mt-4 shell">
+      <header className="nav-shell">
+        <a href="#top" className="flex-shrink-0" aria-label={company.name}>
           <Image
             src="/logo.png"
-            alt="PT Kreatif Food Indonesia logo"
+            alt={`${company.name} logo`}
             width={2500}
             height={718}
             priority
-            sizes="(max-width: 640px) 104px, (max-width: 768px) 126px, 150px"
-            className="h-auto w-[104px] shrink-0 sm:w-[126px] md:w-[150px]"
+            sizes="(max-width: 640px) 104px, (max-width: 1024px) 126px, 150px"
+            className="h-auto w-[104px] sm:w-[126px] lg:w-[150px]"
           />
+        </a>
+
+        <nav className="hidden items-center gap-7 lg:flex">
+          {navLinks.map((link) => (
+            <a key={link.href} href={link.href} className="nav-link">
+              {link.label}
+            </a>
+          ))}
+        </nav>
+
+        <div className="hidden items-center gap-3 lg:flex">
+          <span className="pill">
+            <Icon name="thermometer" className="h-4 w-4" />
+            Cold chain −18°C
+          </span>
+          <a href="#kontak" className="btn btn-solid px-5 py-2.5 text-sm">
+            Hubungi kami
+          </a>
         </div>
 
-        <p className="hidden flex-1 text-center text-sm leading-6 text-[var(--color-ink-soft)] lg:block">
-          Supplier ayam frozen & fresh berkualitas untuk restoran, katering, dan UMKM kuliner.
-        </p>
-
-        {/* Hamburger Menu Button */}
-        <div className="flex-shrink-0">
-          <button
-            className="relative z-[60] p-2 text-gray-800 focus:outline-none"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
-            <div className="w-6 flex flex-col items-end gap-1.5">
-              <span className={`block h-[2px] bg-current transition-all duration-300 ${isOpen ? "w-6 translate-y-[8px] rotate-45" : "w-6"}`} />
-              <span className={`block h-[2px] bg-current transition-all duration-300 w-6 ${isOpen ? "opacity-0" : "opacity-100"}`} />
-              <span className={`block h-[2px] bg-current transition-all duration-300 ${isOpen ? "w-6 -translate-y-[8px] -rotate-45" : "w-4"}`} />
-            </div>
-          </button>
-        </div>
-
-        {/* Desktop Menu items */}
-        <div className="hidden w-full items-center gap-6 sm:w-auto sm:justify-end">
-          <nav className="flex items-center gap-6 mr-2">
-            <a href="#layanan" className="text-sm font-semibold text-gray-800 hover:text-[var(--color-leaf)] transition-colors">Layanan</a>
-            <a href="#produk" className="text-sm font-semibold text-gray-800 hover:text-[var(--color-leaf)] transition-colors">Produk</a>
-          </nav>
-
-          {/* Language Switcher */}
-          <div className="flex items-center gap-0.5 bg-gray-100/80 p-1 rounded-full border border-gray-200/50 backdrop-blur-sm">
-            <label className={`cursor-pointer flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-semibold transition-all duration-200 ${
-              lang === "id" ? "bg-white text-[var(--color-leaf)] shadow-[0_2px_8px_rgba(0,0,0,0.08)]" : "text-gray-500 hover:text-gray-800"
-            }`}>
-              <input
-                type="radio"
-                name="desktop-language"
-                value="id"
-                checked={lang === "id"}
-                onChange={() => setLang("id")}
-                className="hidden"
-              />
-              <span className="text-base leading-none">🇮🇩</span>
-              <span>ID</span>
-            </label>
-            <label className={`cursor-pointer flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-semibold transition-all duration-200 ${
-              lang === "en" ? "bg-white text-[var(--color-leaf)] shadow-[0_2px_8px_rgba(0,0,0,0.08)]" : "text-gray-500 hover:text-gray-800"
-            }`}>
-              <input
-                type="radio"
-                name="desktop-language"
-                value="en"
-                checked={lang === "en"}
-                onChange={() => setLang("en")}
-                className="hidden"
-              />
-              <span className="text-base leading-none">🇬🇧</span>
-              <span>EN</span>
-            </label>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <span className="rounded-full bg-[var(--color-sun)]/15 px-4 py-2 text-sm font-semibold text-[var(--color-sun-deep)]">
-              Cold Chain
-            </span>
-            <span className="rounded-full border border-[var(--color-leaf)]/15 px-4 py-2 text-sm font-medium text-[var(--color-leaf)]">
-              Halal & NKV
-            </span>
-          </div>
-        </div>
+        <button
+          className="relative z-[60] -mr-1 p-2 text-[var(--kfi-forest)] lg:hidden"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? "Tutup menu" : "Buka menu"}
+          aria-expanded={isOpen}
+        >
+          <span className="flex w-6 flex-col items-end gap-1.5">
+            <span
+              className={`block h-[2px] w-6 bg-current transition-transform duration-300 ${
+                isOpen ? "translate-y-[8px] rotate-45" : ""
+              }`}
+            />
+            <span
+              className={`block h-[2px] w-6 bg-current transition-opacity duration-300 ${
+                isOpen ? "opacity-0" : "opacity-100"
+              }`}
+            />
+            <span
+              className={`block h-[2px] bg-current transition-transform duration-300 ${
+                isOpen ? "w-6 -translate-y-[8px] -rotate-45" : "w-4"
+              }`}
+            />
+          </span>
+        </button>
       </header>
 
-      {/* Menu Overlay */}
+      {/* Lapisan gelap di belakang panel menu */}
       <div
-        className={`fixed inset-[initial] top-0 left-0 w-screen h-screen z-40 bg-black/20 backdrop-blur-sm transition-opacity duration-300 ${
-          isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        className={`fixed inset-0 z-40 bg-[rgba(11,39,33,0.45)] backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
+          isOpen ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
         onClick={() => setIsOpen(false)}
+        aria-hidden="true"
       />
 
-      {/* Menu Panel - Slide from right */}
+      {/* Panel menu */}
       <div
-        className={`fixed top-0 right-0 z-50 h-screen w-4/5 max-w-sm bg-white/95 backdrop-blur-xl shadow-2xl transition-all duration-500 ease-out flex flex-col px-6 py-24 ${
-          isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0 pointer-events-none invisible"
+        className={`fixed right-0 top-0 z-50 flex h-screen w-[85%] max-w-sm flex-col bg-white px-6 py-8 shadow-2xl transition-transform duration-400 ease-out lg:hidden ${
+          isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <Image
           src="/logo.png"
-          alt="PT Kreatif Food Indonesia logo"
-          width={150}
-          height={45}
-          className="mb-8"
+          alt={`${company.name} logo`}
+          width={300}
+          height={86}
+          className="h-auto w-[132px]"
         />
-        <p className="mb-8 text-sm leading-6 text-[var(--color-ink-soft)]">
-          Supplier ayam frozen & fresh berkualitas untuk restoran, katering, dan UMKM kuliner.
+        <p className="mt-5 text-sm leading-7 text-[var(--kfi-ink-soft)]">
+          {company.positioning} — untuk HORECA, ritel, industri pangan, dan pasar ekspor.
         </p>
 
-        <nav className="flex flex-col gap-6 border-b border-gray-100 pb-8 mb-8">
-          <a href="#layanan" onClick={() => setIsOpen(false)} className="text-xl font-semibold text-gray-800 hover:text-[var(--color-leaf)] transition-colors">Layanan</a>
-          <a href="#produk" onClick={() => setIsOpen(false)} className="text-xl font-semibold text-gray-800 hover:text-[var(--color-leaf)] transition-colors">Produk</a>
+        <nav className="mt-8 flex flex-col divide-y divide-[var(--kfi-line)] border-y border-[var(--kfi-line)]">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setIsOpen(false)}
+              className="flex items-center justify-between py-4 font-display text-lg font-semibold text-[var(--kfi-forest)]"
+            >
+              {link.label}
+              <Icon name="check" className="h-4 w-4 text-[var(--kfi-teal)] opacity-0" />
+            </a>
+          ))}
         </nav>
 
-        <div className="flex flex-col gap-4">
-          {/* Language Switcher - Mobile */}
-          <div className="flex items-center gap-0.5 bg-gray-100 p-1 rounded-full border border-gray-200 self-start mb-2">
-            <label className={`cursor-pointer flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
-              lang === "id" ? "bg-white text-[var(--color-leaf)] shadow-[0_2px_8px_rgba(0,0,0,0.08)]" : "text-gray-500 hover:text-gray-800"
-            }`}>
-              <input
-                type="radio"
-                name="mobile-language"
-                value="id"
-                checked={lang === "id"}
-                onChange={() => setLang("id")}
-                className="hidden"
-              />
-              <span className="text-lg leading-none">🇮🇩</span>
-              <span>Indonesia</span>
-            </label>
-            <label className={`cursor-pointer flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
-              lang === "en" ? "bg-white text-[var(--color-leaf)] shadow-[0_2px_8px_rgba(0,0,0,0.08)]" : "text-gray-500 hover:text-gray-800"
-            }`}>
-              <input
-                type="radio"
-                name="mobile-language"
-                value="en"
-                checked={lang === "en"}
-                onChange={() => setLang("en")}
-                className="hidden"
-              />
-              <span className="text-lg leading-none">🇬🇧</span>
-              <span>English</span>
-            </label>
-          </div>
+        <div className="mt-8 flex flex-wrap gap-2">
+          <span className="pill">
+            <Icon name="thermometer" className="h-4 w-4" />
+            Cold chain −18°C
+          </span>
+          <span className="pill">
+            <Icon name="sparkle" className="h-4 w-4" />
+            Higienis &amp; halal
+          </span>
+        </div>
 
-          <span className="inline-flex items-center justify-center rounded-full bg-[var(--color-sun)]/15 px-4 py-3 text-sm font-semibold text-[var(--color-sun-deep)]">
-            Cold Chain Terjaga
-          </span>
-          <span className="inline-flex items-center justify-center rounded-full border border-[var(--color-leaf)]/15 px-4 py-3 text-sm font-medium text-[var(--color-leaf)]">
-            Halal & NKV
-          </span>
+        <a
+          href="#kontak"
+          onClick={() => setIsOpen(false)}
+          className="btn btn-solid mt-6 w-full"
+        >
+          Hubungi kami
+        </a>
+
+        <div className="mt-auto flex items-center gap-1 rounded-full border border-[var(--kfi-line)] p-1 self-start">
+          {(["id", "en"] as const).map((code) => (
+            <button
+              key={code}
+              onClick={() => setLang(code)}
+              className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
+                lang === code
+                  ? "bg-[var(--kfi-deep)] text-white"
+                  : "text-[var(--kfi-ink-soft)]"
+              }`}
+            >
+              {code === "id" ? "Indonesia" : "English"}
+            </button>
+          ))}
         </div>
       </div>
     </div>

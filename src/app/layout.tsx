@@ -6,36 +6,40 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 const bodyFont = Plus_Jakarta_Sans({
   variable: "--font-body",
   subsets: ["latin"],
+  display: "swap",
+});
+
+const displayFont = Sora({
+  variable: "--font-heading",
+  subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-});
-
-const displayFont = Sora({
-  variable: "--font-display",
-  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "PT Kreatif Food Indonesia | Supplier Ayam Frozen & Fresh",
+  metadataBase: new URL("https://kreatiffood.id"),
+  title: "PT Kreatif Food Indonesia | Pengolahan, Distribusi & Perdagangan Ayam Beku",
   description:
-    "PT Kreatif Food Indonesia menyediakan pasokan ayam frozen dan ayam fresh berkualitas tinggi langsung ke UMKM, restoran, katering, dan usaha kuliner. Pengiriman cepat, stok stabil, harga kompetitif.",
+    "PT Kreatif Food Indonesia mengolah, mendistribusikan, dan memperdagangkan produk ayam beku (frozen food) yang berkualitas, higienis, dan halal. Cold chain terjaga -18°C untuk HORECA, ritel, industri pangan, dan pasar ekspor.",
   keywords:
-    "supplier ayam frozen Jakarta, ayam fresh UMKM, distributor ayam segar, Kreatif Food Indonesia, pasokan ayam katering, ayam frozen restoran, supply chain ayam B2B, PT Kreatif Food Indonesia",
+    "ayam beku, frozen food ayam, supplier karkas ayam, boneless dada ayam, boneless paha ayam, distributor ayam beku HORECA, cold chain ayam, zero waste processing ayam, PT Kreatif Food Indonesia, AYAMKITA, Prime Chicken, KFI Poultry Premium",
   openGraph: {
-    title: "PT Kreatif Food Indonesia — Ayam Frozen & Fresh untuk Bisnis Kuliner",
+    title: "PT Kreatif Food Indonesia — Frozen Food Ayam Berkualitas, Higienis, dan Halal",
     description:
-      "Pasokan ayam frozen dan fresh langsung dari rantai distribusi besar. Kualitas terjaga, pengiriman tepat waktu, dan skema fleksibel untuk UMKM.",
-    url: "https://kreatifood.id/",
-    siteName: "Kreatif Food Indonesia",
+      "Pengolahan, distribusi, dan perdagangan ayam beku dengan rantai dingin terjaga. Melayani HORECA, ritel, industri pangan, dan pasar ekspor.",
+    url: "https://kreatiffood.id/",
+    siteName: "PT Kreatif Food Indonesia",
     images: [
       {
-        url: "logo1.png",
+        url: "/logo.png",
         width: 1200,
         height: 630,
-        alt: "PT Kreatif Food Indonesia — Supplier Ayam Frozen & Fresh",
+        alt: "PT Kreatif Food Indonesia — Fresh Quality, Trusted Nutrition",
       },
     ],
     locale: "id_ID",
@@ -43,10 +47,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "PT Kreatif Food Indonesia | Ayam Frozen & Fresh",
+    title: "PT Kreatif Food Indonesia | Frozen Food Ayam",
     description:
-      "Solusi pasokan ayam frozen dan fresh untuk bisnis kuliner — stok stabil, kualitas terjaga, pengiriman cepat ke seluruh wilayah.",
-    images: ["https://kreatiffood.id/twitter-image.jpg"],
+      "Fresh Quality, Trusted Nutrition — ayam beku berkualitas untuk HORECA, ritel, industri pangan, dan ekspor.",
+    images: ["/logo.png"],
   },
 };
 
