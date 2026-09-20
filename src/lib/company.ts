@@ -10,8 +10,8 @@ export const company = {
   positioning: "Frozen Food Ayam Berkualitas, Higienis, dan Halal",
   bidangUsaha: "Pengolahan, Distribusi & Perdagangan Ayam Beku",
   email: "info@kreatiffood.id",
-  whatsapp: "6281234567890",
-  phones: ["0251-123 4567", "0251-123 4568"],
+  whatsapp: "6282324000082",
+  phones: ["62823-24000082", "6282324000082"],
   offices: {
     bogor: {
       label: "Kantor / Domisili",
